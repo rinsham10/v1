@@ -1,9 +1,12 @@
 import adobeSvg from '../images/svg/adobe.svg';
 import arrowRightSvg from '../images/svg/arrowRight.svg';
+import bentarrowSvg from '../images/svg/bentarrow.svg';
 import calendarSvg from '../images/svg/calendar.svg';
 import copySvg from '../images/svg/copy.svg';
 import cssSvg from '../images/svg/css.svg';
 import githubSvg from '../images/svg/githuboutline.svg';
+import gmailSvg from '../images/svg/gmail.svg';
+import phoneSvg from '../images/svg/phone.svg';
 import linkedinSvg from '../images/svg/linkedinw.svg';
 import lockSvg from '../images/svg/lock.svg';
 import mailtoSvg from '../images/svg/mailto.svg';
@@ -19,10 +22,13 @@ import wordpressSvg from '../images/svg/wordpress.svg';
 const svgIcons = {
   adobe: adobeSvg,
   arrow: arrowRightSvg,
+  bentarrow:bentarrowSvg,
   calendar: calendarSvg,
   css: cssSvg,
   copy: copySvg,
   github: githubSvg,
+  gmail: gmailSvg,
+  phone: phoneSvg,
   linkedin: linkedinSvg,
   lock: lockSvg,
   mailto: mailtoSvg,
