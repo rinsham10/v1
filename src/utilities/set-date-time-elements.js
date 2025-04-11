@@ -1,13 +1,16 @@
-const getMyTime = (date) => date.toLocaleString('en-US', {
-  timeZone: 'America/Los_Angeles',
-  hour: 'numeric',
-  minute: 'numeric',
-  hour12: true,
-});
+const getMyTime = (date) =>
+  date.toLocaleTimeString("en-IN", {
+    timeZone: "Asia/Kolkata",
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: true,
+  });
+
+
 
 const setDateTime = (timeString) => {
   const contactDateTime = document.querySelector('.cm-left--time');
-  contactDateTime.textContent = `PST: ${timeString}`;
+  contactDateTime.textContent = `IST: ${timeString}`;
 };
 
 const initDateTimeElements = () => {
