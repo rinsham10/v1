@@ -4,6 +4,7 @@ import calendarSvg from '../images/svg/calendar.svg';
 import copySvg from '../images/svg/copy.svg';
 import cssSvg from '../images/svg/css.svg';
 import githubSvg from '../images/svg/githuboutline.svg';
+import linkedinSvg from '../images/svg/linkedinw.svg';
 import lockSvg from '../images/svg/lock.svg';
 import mailtoSvg from '../images/svg/mailto.svg';
 import nextSvg from '../images/svg/next.svg';
@@ -22,6 +23,7 @@ const svgIcons = {
   css: cssSvg,
   copy: copySvg,
   github: githubSvg,
+  linkedin: linkedinSvg,
   lock: lockSvg,
   mailto: mailtoSvg,
   next: nextSvg,

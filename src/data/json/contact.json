@@ -12,16 +12,13 @@
       "dataBef": null,
       "idx": 0
     },
-    "youtube": {
-      "cname": "badge-youtube",
-      "href": "https://www.youtube.com/channel/UCawR0cR_xHGCnKy3Vg6yc7g",
-      "title": "YouTube",
-      "dataAcc": "3.6k subs",
-      "dataBef": [
-        "@otto-fy",
-        "_"
-      ],
-      "idx": 1
+    "linkedin": {
+      "cname": "badge-linkedin",
+      "href": "https://www.linkedin.com/in/mohammedrinsham/",
+      "title": "LinkedIn",
+      "dataAcc": "Mohammed Rinsham",
+      "dataBef": null,
+      "idx": 0
     }
   }
 }

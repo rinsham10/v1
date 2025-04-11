@@ -3,6 +3,7 @@ import useCopyToClipboard from '../../hooks/handle-copy';
 import createButton from '../ui/button';
 import createLink from '../ui/link';
 import createToast from '../ui/toast';
+import svgIcons from 'C:/Users/hp/Desktop/code/portfolio/v1/src/utilities/get-svg.js';
 
 /**
  * createBadge
@@ -22,7 +23,8 @@ const createBadge = (
   dataBef,
   idx,
 ) => {
-  const cmBodyImgs = document.querySelectorAll('.cm-body--img');
+  
+  const platform = cname.replace('badge-', '');
 
   const badge = document.createElement('div');
   badge.classList.add('cm-right--top__cell');
@@ -36,7 +38,9 @@ const createBadge = (
   const badgeTopContainerSvg = document.createElement('div');
   badgeTopContainerSvg.classList.add('badge-top--container--svg');
   const badgeTopContainerSvgImg = document.createElement('img');
-  badgeTopContainerSvgImg.src = cmBodyImgs[idx].getAttribute('src');
+  
+  badgeTopContainerSvgImg.src = svgIcons[platform] || svgIcons['github'];
+
   badgeTopContainerSvgImg.alt = '';
   const badgeTopSpan = document.createElement('span');
   badgeTopSpan.dataset.acc = dataAcc;
