@@ -214,10 +214,10 @@
 .badge-top--container--svg {
   display: flex;
   overflow: hidden;
-  width: 3rem;
-  min-width: 3rem;
-  height: 3rem;
-  min-height: 3rem;
+  width: 2.5rem;
+  min-width: 2.5rem;
+  height: 2.5rem;
+  min-height: 2.5rem;
   align-items: center;
   justify-content: center;
   border-radius: var(--br-half);
