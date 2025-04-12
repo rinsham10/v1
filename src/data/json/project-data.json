@@ -49,8 +49,8 @@
 		},
 		"card": {
 			"stacks": [
-				"vanilla",
-				"webpack"
+				"python",
+				"css"
 			],
 			"lighthouseKey": "agrisens",
 			"description": "Crop Recommendation System Using Machine Learning",

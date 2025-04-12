@@ -87,6 +87,8 @@
 .react-icon,
 .next-icon,
 .webpack-icon,
+.python-icon,         /* ✅ Add this */
+.css-icon,
 .vite-icon {
   position: relative;
   z-index: 3;
