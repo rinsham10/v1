@@ -1,29 +1,32 @@
 [
   {
     "content": [
-      "Nearly 2 years of experience with React, the last year of which has been exclusively with TypeScript.",
-      "Capable of building apps from the ground up, and do not rely on any libraries or third party packages to do so.",
-      "I've invested a lot of time into learning how React works, and through doing so have refined my approach to get the most out off performance and maintainability. All of my projects are built with the same approach, I prioritize finding the right answer when it comes to React, not the easiest."
+      "Strong foundation in Java, with hands-on experience through academic assignments and mini-projects.",
+      "Proficient in object-oriented programming concepts including classes, inheritance, and exception handling.",
+      "Built basic backend applications using Spring Boot, focusing on REST APIs and modular design.",
+      "Familiar with using development tools like VS Code and the Spring Initializr for setting up and running projects."
     ],
-    "imgSrc": "react",
-    "title": "React JS"
+    "imgSrc": "java",
+    "title": "Java"
   },
   {
     "content": [
-      "1 year of experience building Next.js applications, all of which are written in TypeScript.",
-      "Well-versed in the majority of Next.js features, both new and old.",
-      "Have built dozens of projects with Next.js and have carefully refined my approach to get the most out of the framework. My most recent project is a blog built from scratch meant to demonstrate my current skill level, it is featured in the 'Projects' section."
+      "Strong understanding of Python programming, with hands-on experience through academic and personal projects.",
+      "Completed a machine learning project using Python, involving data preprocessing, model training, and evaluation.",
+      "Familiar with popular libraries such as NumPy, Pandas, Matplotlib, and scikit-learn.",
+      "Comfortable writing clean, efficient scripts and working with real-world datasets for data analysis and model building."
     ],
-    "imgSrc": "next",
-    "title": "Next.js"
+    "imgSrc": "python",
+    "title": "Python"
   },
   {
     "content": [
-      "1 year of experience with Typescript. Have used it exclusively for that time, and have gotten familiar with the majority of its intricacies both in conjunction with React and Vanilla JS.",
-      "Published two NPM packages using Typescript, neither are very popular but I believe the monthpicker in particular is a good representation of my current skill level and understaning of TS."
+      "Good understanding of SQL fundamentals with hands-on experience using PostgreSQL in academic projects.",
+      "Used SQL for data storage, retrieval, and manipulation in a machine learning project backend.",
+      "Comfortable designing simple relational schemas and connecting PostgreSQL with Python applications."
     ],
-    "imgSrc": "typescript",
-    "title": "TypeScript"
+    "imgSrc": "sql",
+    "title": "SQL"
   },
   {
     "content": [
@@ -44,9 +47,10 @@
   },
   {
     "content": [
-      "Over 5 years of experience with CSS, enough to know how to re-create any design so long as it doesn't involve canvas magic.",
-      "Am open to using any CSS framework or tooling, some of the ones I am familiar with are: Bootstrap, Tailwind, and Module CSS.",
-      "Familiar and proficient with recreating designs from Figma, Adobe XD, or any other design tool. I am not great at designing myself due to how long it takes me, but if necessary I can do it, an example being this portfolio."
+      "Built the frontend of a web server project, designing responsive and user-friendly interfaces using HTML5 and CSS3",
+      "Am open to using any CSS framework or tooling, some of the ones I am familiar with are: Bootstrap, Tailwind CSS.",
+      "Focused on semantic HTML and structured content for maintainability and accessibility.",
+      "Styled pages with custom CSS, implementing consistent themes, spacing, and basic transitions to enhance user experience."
     ],
     "imgSrc": "css",
     "title": "CSS"

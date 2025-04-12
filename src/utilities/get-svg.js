@@ -8,6 +8,9 @@ import githubSvg from '../images/svg/githuboutline.svg';
 import gmailSvg from '../images/svg/gmail.svg';
 import phoneSvg from '../images/svg/phone.svg';
 import linkedinSvg from '../images/svg/linkedinw.svg';
+import javaSvg from '../images/svg/java.svg';
+import pythonSvg from '../images/svg/python.svg';
+import sqlSvg from '../images/svg/sql.svg';
 import lockSvg from '../images/svg/lock.svg';
 import mailtoSvg from '../images/svg/mailto.svg';
 import nextSvg from '../images/svg/next.svg';
@@ -20,6 +23,9 @@ import webpackSvg from '../images/svg/webpack.svg';
 import wordpressSvg from '../images/svg/wordpress.svg';
 
 const svgIcons = {
+  java: javaSvg,
+  python: pythonSvg,
+  sql: sqlSvg,
   adobe: adobeSvg,
   arrow: arrowRightSvg,
   bentarrow:bentarrowSvg,
