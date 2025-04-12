@@ -19,7 +19,6 @@ const createProjectTabs = (title, identifiers, tabIdx, checked, listener) => {
   input.value = title;
   input.checked = checked;
   const label = document.createElement('label');
-  label.dataset.labAfter = 'view';
   label.dataset.labSm = labSm;
   label.dataset.tabIdx = tabIdx;
   label.setAttribute('for', tabId);

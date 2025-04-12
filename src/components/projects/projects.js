@@ -51,7 +51,6 @@ const createProjectHeader = (projectCell, tabs, projLink, githubLink, title, pub
       const identifiers = {
         tabId: `${formattedTitle}-${tab.toLowerCase()}`,
         projName: formattedTitle,
-        suffix: 'View',
       };
 
       tabsWrapper.append(createProjectTabs(
