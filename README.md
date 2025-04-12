@@ -1,44 +1,20 @@
-# [ottofy.dev](https://ottofy.dev)
+# My Portfolio – rinsham10
 
-![img](/screenshots/sc1d.png)
+Live site 👉 [https://rinsham10.github.io/v1/](https://rinsham10.github.io/v1/)
 
-personal portfolio
+![Preview](/screenshots/sc.png)
 
-wanted to make this as snappy as possible, still think webpack/vanilla is the best...
+This is my personal portfolio site built with Webpack and vanilla JavaScript (forked from Chase Ottofy).
 
+## Features
+- Fully responsive
+- Fast loading (optimized build)
+- Contact form (configurable with Google Apps Script)
+- Easy-to-update JSON data for projects & sections
 
-**If you plan on forking this and using it as a template**
+---
 
-you'll have to --
-
-- update the json data in src/data/json
-- udpate the images in src/assets/images/imgproj && src/assets/images/mugshot
-- configure the form to send the data somewhere,
-
-here's an example of something you could implement through Apps Script in sheets: for this the other step is get the macro exec path which will serve as the fetch url
-
-```javascript
-const sheets = SpreadsheetApp.openByUrl("https://docs.google.com/spreadsheets/d/<YOUR SHEET ID HERE>");
-const sheet = sheets.getSheetByName("Sheet1");
-
-function doPost(e){
-  let data = e.parameter;
-  const { parameter: {
-    messageName,
-    contactMethod,
-    messageContactVal,
-    messageVal,
-  }} = e;
-  sheet.appendRow([
-    messageName,
-    contactMethod,
-    messageContactVal,
-    messageVal,
-  ]);
-  return ContentService.createTextOutput("Success");
-}
-```
-
+Forked from [Chase Ottofy's original repo](https://github.com/chaseottofy/portfolio)
 
 
 
