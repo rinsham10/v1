@@ -216,4 +216,10 @@
   }
 }
 
+.ihs-row:last-child {
+  padding-left: 4rem; /* move both paragraphs to the right */
+  margin-top: 3.5rem; /* move both paragraphs downward */
+}
+
+
 @media screen and (max-height: 420px) {}
