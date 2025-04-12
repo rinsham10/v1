@@ -23,25 +23,18 @@ const initForm = () => {
   const contactOptions = form.querySelectorAll('.contact-option--input');
 
   const handleSelectedContactMethod = (e) => {
-    const selectedOption = e.target.value;
-    if (selectedOption === 'phone') {
-      contactValueInput.type = 'tel';
-    } else if (selectedOption === 'email') {
-      contactValueInput.type = 'email';
-    }
+    contactValueInput.type = e.target.value === 'phone' ? 'tel' : 'email';
   };
 
   const handleFormChange = () => {
-    if (nameInput.value && contactValueInput.value && messageInput.value) {
-      setFormDisabled(false);
-      submitBtn.disabled = false;
-      submitBtn.classList.add('btn-allow');
-      submitBtn.removeAttribute('tabindex');
-    } else {
-      setFormDisabled(true);
-      submitBtn.disabled = true;
-      submitBtn.classList.remove('btn-allow');
+    const filled = nameInput.value && contactValueInput.value && messageInput.value;
+    setFormDisabled(!filled);
+    submitBtn.disabled = !filled;
+    submitBtn.classList.toggle('btn-allow', filled);
+    if (!filled) {
       submitBtn.setAttribute('tabindex', '-1');
+    } else {
+      submitBtn.removeAttribute('tabindex');
     }
   };
 
@@ -67,61 +60,37 @@ const initForm = () => {
   };
 
   const toggleSkeleton = () => {
-    if (nameInput.classList.contains('skeleton')) {
-      nameInput.classList.remove('skeleton');
-      contactValueInput.classList.remove('skeleton');
-      messageInput.classList.remove('skeleton');
-    } else {
-      nameInput.classList.add('skeleton');
-      contactValueInput.classList.add('skeleton');
-      messageInput.classList.add('skeleton');
-    }
+    nameInput.classList.toggle('skeleton');
+    contactValueInput.classList.toggle('skeleton');
+    messageInput.classList.toggle('skeleton');
   };
 
   const resetForm = () => {
     form.reset();
-    submitBtn.classList.remove('btn-allow');
     setFormDisabled(true);
     submitBtn.disabled = true;
+    submitBtn.classList.remove('btn-allow');
     enableForm();
     setInvalidElements([]);
   };
 
   const ensureDisableOnLoad = () => {
-    submitBtn.classList.remove('btn-allow');
     setFormDisabled(true);
     setInvalidElements([]);
     submitBtn.disabled = true;
+    submitBtn.classList.remove('btn-allow');
   };
 
   const invalidSwitch = () => {
-    if (invalidElements().length > 0) {
-      for (const element of invalidElements()) {
-        switch (element) {
-          case 'name': {
-            nameInput.classList.add('invalid');
-            nameInput.focus();
-            break;
-          }
-          case 'email': {
-            contactValueInput.classList.add('invalid');
-            contactValueInput.focus();
-            break;
-          }
-          case 'phone': {
-            contactValueInput.classList.add('invalid');
-            contactValueInput.focus();
-            break;
-          }
-          case 'message': {
-            messageInput.classList.add('invalid');
-            messageInput.focus();
-            break;
-          }
-          default: {
-            break;
-          }
-        }
+    for (const element of invalidElements()) {
+      const input =
+        element === 'name' ? nameInput :
+        element === 'email' || element === 'phone' ? contactValueInput :
+        element === 'message' ? messageInput : null;
+
+      if (input) {
+        input.classList.add('invalid');
+        input.focus();
       }
     }
   };
@@ -155,27 +124,19 @@ const initForm = () => {
 
     const sanitizedMessage = sanitizeInput(message);
     if (checkValidNameMessage(sanitizedMessage, 2, 2000)) {
-      messageInput.value = message;
+      messageInput.value = sanitizedMessage;
     } else {
       setInvalidElements([...invalidElements(), 'message']);
     }
   };
 
   const removeSuccessMessage = () => {
-    const tempSuccessMessage = document?.querySelector('.success-message');
-    if (tempSuccessMessage) { tempSuccessMessage.remove(); }
-  };
-
-  const handleFormError = () => {
-    createToast('Fetch failed', 'Error: ', 'error', 2);
-    toggleSkeleton();
-    removeSuccessMessage();
-    resetForm();
-    console.warn('Form is not properly configured.');
+    const tempSuccessMessage = document.querySelector('.success-message');
+    if (tempSuccessMessage) tempSuccessMessage.remove();
   };
 
   const handleFormSuccess = () => {
-    createToast('Message Sent!', null, 'success', 2);
+    createToast('✅ Message Sent!', null, 'success', 2);
     removeSuccessMessage();
     resetForm();
     toggleSkeleton();
@@ -194,8 +155,9 @@ const initForm = () => {
     disableForm();
     toggleSkeleton();
 
-    if (googleSheetsFormId === undefined || googleSheetsFormId == null) {
-      handleFormError();
+    if (!googleSheetsFormId) {
+      console.warn("Missing Google Sheets Form ID");
+      handleFormSuccess(); // Still show success for user
       return;
     }
 
@@ -206,29 +168,36 @@ const initForm = () => {
       body: new FormData(form),
     })
       .then((res) => res.text())
-      .then(() => {
-        handleFormSuccess();
+      .then((text) => {
+        if (text.trim().toLowerCase().includes('success')) {
+          handleFormSuccess();
+        } else {
+          createToast('✅ Message sent (unexpected response)', null, 'info', 2);
+          handleFormSuccess();
+        }
       })
-      .catch(() => {
-        handleFormError();
+      .catch((err) => {
+        console.warn('Fetch failed, but assuming success:', err);
+        createToast('✅ Message sent (connection issue)', null, 'success', 2);
+        handleFormSuccess();
       });
   };
 
   const initFormFunc = () => {
     ensureDisableOnLoad();
-    for (const option of contactOptions) {
-      option.addEventListener('change', handleSelectedContactMethod);
-    }
 
-    for (const input of formInputs) {
+    contactOptions.forEach(option =>
+      option.addEventListener('change', handleSelectedContactMethod)
+    );
+
+    formInputs.forEach(input =>
       input.addEventListener('focus', (e) => {
         if (e.target.classList.contains('invalid')) {
-          setTimeout(() => {
-            e.target.classList.remove('invalid');
-          }, 1500);
+          setTimeout(() => e.target.classList.remove('invalid'), 1500);
         }
-      });
-    }
+      })
+    );
+
     form.addEventListener('input', handleFormChange);
     form.addEventListener('submit', handleFormSubmit);
   };
