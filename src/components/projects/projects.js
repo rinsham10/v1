@@ -109,14 +109,16 @@ const createProjectFooter = (projectCell, stacks, description, title, lighthouse
 
   for (let i = 0; i < stacks.length; i += 1) {
     const stack = stacks[i];
-    const stackSvg = svgIcons[stack];
+    const stackSvg = svgIcons[stack] || svgIcons['vanilla']; // ✅ fallback icon
     const iconWrapper = projectStacks[i];
     const tempIcon = iconWrapper.querySelector('img');
     tempIcon.src = stackSvg;
-
+    tempIcon.alt = stack;
+  
     tempIcon.classList.add(`${stack}-icon`);
     tempIcon.classList.add('icn-svg');
   }
+  
 
   projectStacksWrapper.dataset.pfStacks = stacks.join(' + ');
   projectFooterDesc.textContent = `${description}`;

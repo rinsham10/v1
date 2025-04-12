@@ -31,6 +31,7 @@ const svgIcons = {
   linux: linuxSvg,
   js: jsSvg,
   adobe: adobeSvg,
+  filler:require('../images/svg/vanilla.svg'), // 👈 fallback
   arrow: arrowRightSvg,
   bentarrow:bentarrowSvg,
   calendar: calendarSvg,
@@ -53,3 +54,4 @@ const svgIcons = {
 };
 
 export default svgIcons;
+window.svgIcons = svgIcons;
