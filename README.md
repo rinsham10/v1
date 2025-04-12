@@ -2,7 +2,6 @@
 
 Live site 👉 [https://rinsham10.github.io/v1/](https://rinsham10.github.io/v1/)
 
-![Preview](/screenshots/sc.png)
 
 This is my personal portfolio site built with Webpack and vanilla JavaScript (forked from Chase Ottofy).
 
