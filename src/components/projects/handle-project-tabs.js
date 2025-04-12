@@ -57,15 +57,15 @@ const appendPicture = (parent, altval, sources) => {
   });
 };
 
-const configPicture = (parent, nth) => {
+const configPicture = (parent, nth, imageSet) => {
   const imgWrapper = document.createElement('picture');
-  const { calendar: calendarImageSet } = projectImages;
   imgWrapper.classList.add('cal-current', 'proj-img');
   imgWrapper.dataset.hasimg = 'true';
   imgWrapper.dataset.calNth = nth;
   parent.append(imgWrapper);
-  appendPicture(imgWrapper, 'cal', calendarImageSet[nth - 1]);
+  appendPicture(imgWrapper, 'cal', imageSet[nth - 1]);
 };
+
 
 const [tabState, setTabState] = handleState(0);
 
@@ -76,8 +76,17 @@ const handleTab = (nth) => {
   setTabState(nth - 1);
   const nowActive = document.querySelector(`[data-cal-nth="${tabState() + 1}"]`);
 
+  // 👇 Safely get your image set
+  const { agrisens: agrisensImageSet } = projectImages;
+  const imageSet = agrisensImageSet;
+
+  if (!imageSet || !imageSet[nth - 1]) {
+    console.error(`Image for tab ${nth} is missing`);
+    return;
+  }
+
   if (nowActive === null) {
-    configPicture(activeImg.parentElement, +nth);
+    configPicture(activeImg.parentElement, +nth, imageSet);
     activeImg.classList.remove(currentClass);
     activeImg.classList.add('fade-img--out');
     setTimeout(() => {
@@ -91,5 +100,6 @@ const handleTab = (nth) => {
     nowActive.classList.add(currentClass);
   }
 };
+
 
 export default handleTab;

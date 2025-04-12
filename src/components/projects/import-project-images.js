@@ -7,7 +7,7 @@ import { aspectSmallWidth } from '../../data/constants';
 import blog1 from '../../images/imgproj/blog1.webp';
 import blog2 from '../../images/imgproj/blog2.webp';
 import agrihome from '../../images/imgproj/agrihome.webp';
-import agrifeatures from '../../images/imgproj/agrifeature.webp';
+import agrifeature from '../../images/imgproj/agrifeature.webp';
 import crop from '../../images/imgproj/crop.webp';
 import weather from '../../images/imgproj/weather.webp';
 import guide from '../../images/imgproj/guide.webp';
@@ -27,9 +27,9 @@ import monthpicker1 from '../../images/imgproj/monthpicker1.webp';
 import monthpicker2 from '../../images/imgproj/monthpicker2.webp';
 
 const projectImages = {
-  calendar: [
+  agrisens: [
     [agrihome,agrihome],
-    [agrifeatures, agrifeatures],
+    [agrifeature, agrifeature],
     [crop, crop],
     [weather, weather],
     [guide, guide],

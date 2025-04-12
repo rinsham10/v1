@@ -39,11 +39,12 @@ const configProjectPicture = (picture, images) => {
  * @param {string} published
  * @returns {void}
  */
-const createProjectHeader = (projectCell, tabs, projLink, githubLink, title, published) => {
+const createProjectHeader = (projectCell, tabs, projLink, githubLink, title, published, lighthouseKey) => {
+
   const projectHeader = projectCell.querySelector('.project-content__header');
   if (tabs.length > 1) {
     const tabsWrapper = projectHeader.querySelector('.pc__header-tabs');
-    const formattedTitle = title.toLowerCase().replaceAll(/[^a-z]/g, '');
+    const formattedTitle = lighthouseKey;
 
     for (let i = 0; i < tabs.length; i += 1) {
       const tab = tabs[i];
@@ -137,7 +138,7 @@ const createProjectCards = (data, sources) => {
     const { title, links, card } = data[cardDataKeys[i]];
     const { lighthouseKey, description, published, tabs, stacks } = card;
     const { live: projLink = ['#'], github: githubLink = ['#'] } = links;
-    createProjectHeader(cell, tabs, projLink[0], githubLink[0], title, published);
+    createProjectHeader(cell, tabs, projLink[0], githubLink[0], title, published, lighthouseKey);
     createProjectBody(cell, projectImages[i]);
     createProjectFooter(cell, stacks, description, title, lighthouseKey);
     // give project cell ID for floating menu scroll

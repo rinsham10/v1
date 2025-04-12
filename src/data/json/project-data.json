@@ -1,22 +1,22 @@
 {
-	"calendar": {
+	"agrisens": {
 		"title": "Crop Recommendation System",
 		"hasTabs": true,
 		
 		"images": {
 			"1": [
-				"calendarday1.webp",
-				"calendarweek1.webp",
-				"calendarmonth1.webp",
-				"calendaryear1.webp",
-				"calendarlist1.webp"
+				"agrihome.webp",
+				"agrifeature.webp",
+				"crop.webp",
+				"weather.webp",
+				"guide.webp"
 			],
 			"2": [
-				"calendarday2.webp",
-				"calendarweek2.webp",
-				"calendarmonth2.webp",
-				"calendaryear2.webp",
-				"calendarlist2.webp"
+				"agrihome.webp",
+				"agrifeature.webp",
+				"crop.webp",
+				"weather.webp",
+				"guide.webp"
 			]
 		},
 		"links": {
@@ -52,7 +52,7 @@
 				"vanilla",
 				"webpack"
 			],
-			"lighthouseKey": "calendar",
+			"lighthouseKey": "agrisens",
 			"description": "Crop Recommendation System Using Machine Learning",
 			"published": "Apr 1, 2025",
 			"tabs": [
