@@ -1,6 +1,6 @@
 /** *************************************************************
-https://ottofy.dev
-2024 Chase Ottofy - ottofy@zohomail.com
+https://rinsham10.github.io/v1/
+2025 Mohammed Rinsham - mohammedrinsham@gmail.com
 
 ************************************************************* */
 import initContactMenu from './components/contact-modal/init-contact-modal';
